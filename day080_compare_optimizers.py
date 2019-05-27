@@ -80,7 +80,6 @@ for name_optimizer in optimizer_type:
     model = build_mlp(x_train, y_train)
     model.summary()
     optimizer = eval(f'keras.optimizers.{name_optimizer}(lr={LR})')
-    print(optimizer)
     model.compile(optimizer=optimizer, loss="categorical_crossentropy", metrics=['accuracy'])
     model.fit(x_train, y_train,
              epochs=EPOCHS,
